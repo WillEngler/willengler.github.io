@@ -1,11 +1,25 @@
-# Site settings
-title: Will Engler's CS Learning Blog
-email: Engler.Will@gmail.com
-description: "I learn best by teaching. I will use this blog to teach computer science topics as I learn them at The University of Pittsburgh. I hope you find it useful."
-baseurl: ""
-url: "http://willengler.github.io"
-github_username:  WillEngler
+# Dependencies
+markdown:         redcarpet
+highlighter:		pygments
 
-# Build settings
-markdown: kramdown
-permalink: pretty
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            Hacker In Training
+tagline:          'A learning blog'
+description:      'I''m taking control of my CS education. Here''s what I''m learning.'
+url:              http://willengler.github.io
+baseurl:          /
+
+author:
+  name:           'Will Engler'
+  url:            https://twitter.com/mdo
+
+paginate:         5
+
+# Custom vars
+version:          2.1.0
+
+github:
+  account:           https://github.com/WillEngler
