@@ -234,6 +234,13 @@ img {
   border-radius: 5px;
 }
 
+img.portrait{
+  height: 25%;
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Tables */
 table {
   margin-bottom: 1rem;

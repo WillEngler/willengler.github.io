@@ -8,13 +8,12 @@ permalink:        pretty
 # Setup
 title:            Hacker In Training
 tagline:          'A learning blog'
-description:      'I''m taking control of my CS education. Here''s what I''m learning.'
+description:      'Will Engler''s Journey as a Software Apprentice'
 url:              http://willengler.github.io
 baseurl:          /
 
 author:
   name:           'Will Engler'
-  url:            https://twitter.com/mdo
 
 paginate:         5
 
