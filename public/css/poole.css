@@ -241,6 +241,13 @@ img.portrait{
   margin-right: auto;
 }
 
+img.moon {
+  display: inline-block;
+  height: 40%;
+  width: 40%;
+  margin: 5%
+}
+
 /* Tables */
 table {
   margin-bottom: 1rem;
