@@ -6,9 +6,9 @@ highlighter:		pygments
 permalink:        pretty
 
 # Setup
-title:            Hacker In Training
+title:            Vagabond Coder
 tagline:          'A learning blog'
-description:      'Will Engler''s Journey as a Software Apprentice'
+description:      'Will Engler''s Adventures as a Software Journeyman'
 url:              http://willengler.github.io
 baseurl:          /
 
