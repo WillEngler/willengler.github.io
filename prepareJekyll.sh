@@ -2,7 +2,7 @@
 #The above line specifies what shell this
 # script needs to run on.
 
-#This script takes ~30 minutes to execute on 
+#This script takes about 30 minutes to execute on 
 # a VM w/ 512 MB of RAM
 echo 'Hello, Vagrant!'
 
