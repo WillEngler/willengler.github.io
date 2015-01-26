@@ -38,4 +38,5 @@ validation-status.json
 validation-report.json
 
 # Folders to ignore
+.vagrant
 node_modules
