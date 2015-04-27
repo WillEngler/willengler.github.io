@@ -1,7 +1,5 @@
-# Ignore docs files
-_gh_pages
-_site
-.ruby-version
+__pycache__
+*.pid
 
 # Numerous always-ignore extensions
 *.diff
@@ -29,14 +27,9 @@ nbproject
 *.sublime-workspace
 .idea
 
-# Komodo
-*.komodoproject
-.komodotools
-
 # grunt-html-validation
 validation-status.json
 validation-report.json
 
 # Folders to ignore
-.vagrant
-node_modules
+cache
