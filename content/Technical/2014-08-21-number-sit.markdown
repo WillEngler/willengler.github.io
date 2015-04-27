@@ -2,7 +2,7 @@
 layout: post
 title: How Do You Tell a Number to Sit?
 date: 2014-08-21 08:58:00
-category: Fundamentals
+tags: fundamentals
 ---
 
 A Great Question

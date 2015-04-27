@@ -2,7 +2,7 @@
 layout: post
 title: Why You Should Be A Mentor
 author: Will Engler
-category: Culture
+tags: culture
 date: 2015-01-02 05:45:30
 ---
 

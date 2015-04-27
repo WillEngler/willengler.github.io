@@ -2,8 +2,7 @@
 layout: post
 title: It's a Wide World to Close Off
 author: Will Engler
-category: Personal
-comments: enabled
+tags: personal
 date: 2015-01-26 15:56:30
 ---
 

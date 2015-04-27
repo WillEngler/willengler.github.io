@@ -2,7 +2,7 @@
 layout: post
 title:  "Hello, World!"
 date:   2014-08-18 10:04:57
-category: Personal
+tags: personal
 ---
 
 It’s been two years since I wrote a “Hello, World!” program for my first computer science class. I enjoyed that class so much that I switched my major. The introductory CS curriculum was neatly organized, gently introducing me to data structures and systems software. “This is easy,” I thought. “I’ll be a master in no time.”

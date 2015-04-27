@@ -2,7 +2,7 @@
 layout: post
 title: Vagrant on Windows
 date: 2014-08-25 07:05:00
-category: Process
+tags: Process
 ---
 My Dell laptop came preinstalled with Ubuntu Linux. I thought this was pretty cool, but there were annoying issues with my networking driver that I could never resolve. I finally said screw it and started running a clean install of Windows 8.1. I reasoned that I could use Windows for personal computing and virtualization for development environments.
 

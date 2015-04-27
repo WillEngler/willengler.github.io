@@ -2,7 +2,7 @@
 layout: post
 title: How I Learned to Stop Worrying About Development Environments and Love Vagrant
 date: 2014-08-19 11:07:30
-category: Process
+tags: process
 ---
 
 Configuring Development Environments Gives Me Migraines

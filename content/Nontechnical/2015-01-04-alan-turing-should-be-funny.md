@@ -2,7 +2,7 @@
 layout: post
 title: Alan Turing Should Be Funny
 author: Will Engler
-category: Culture
+tags: culture
 date: 2015-01-04 10:10:30
 ---
 
