@@ -7,7 +7,6 @@ SITENAME = 'Wayfaring Coder'
 SITEURL = ''
 
 PATH = 'content'
-DISQUS_SITENAME = "wayfaringcoder"
 THEME = 'pelican-bootstrap3'
 
 TIMEZONE = 'Europe/Paris'
