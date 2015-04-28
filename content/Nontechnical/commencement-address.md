@@ -85,10 +85,10 @@ Or as a positive example, the self-organizing [Homebrew Computer Club](http://en
 
 One of the most pressing problems we face as an industry is diversity.
 The under-representation of women and people of color in our industry is an outrage.
-That there are systemic obstacles keeping a large group of people out of our industry is unjust in principle.
+That there are systemic obstacles keeping a large group of people out of our industry is unjust on principle.
 But also, by Engler's Corollary, we are doomed as a white male industry to make products that won't serve most people as well as they could because we are missing these voices.
 And that's somewhere where I as a mediocre programmer can contribute.
-I probably will not be a crusader for social justice, but I can work in small ways to make my communities more welcome, to women, minorities, and LGBT people.
+I probably will not be a crusader for social justice, but I can work in small ways to make my communities more welcoming to women, minorities, and LGBT people.
 A bunch of people saying "Hey, that's not cool," when a colleague makes a sexist joke can have a big impact over the sweep of history.
 
 ### Closing
