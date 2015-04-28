@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Baby Steps in Test Driven Development - Wayfaring Coder</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="/images/favicon.ico" rel="icon">
+
+<link rel="canonical" href="/baby-steps-in-test-driven-development.html">
+
+        <meta name="author" content="Will Engler" />
+        <meta name="keywords" content="process" />
+        <meta name="description" content="I Have a Tooling Problem Like most software developers, I’m picky about the tools I use. However, I tend to go too far. For example, I wanted to start a blog a year ago. Instead of finding the shortest path from A to B, I investigated many blogging solutions ..." />
+
+        <meta property="og:site_name" content="Wayfaring Coder" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Baby Steps in Test Driven Development"/>
+        <meta property="og:url" content="/baby-steps-in-test-driven-development.html"/>
+        <meta property="og:description" content="I Have a Tooling Problem Like most software developers, I’m picky about the tools I use. However, I tend to go too far. For example, I wanted to start a blog a year ago. Instead of finding the shortest path from A to B, I investigated many blogging solutions ..."/>
+        <meta property="article:published_time" content="2014-08-28" />
+            <meta property="article:section" content="Technical" />
+            <meta property="article:tag" content="process" />
+            <meta property="article:author" content="Will Engler" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.united.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+Wayfaring Coder            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/category/nontechnical.html">Nontechnical</a>
+                        </li>
+                        <li class="active">
+                            <a href="/category/technical.html">Technical</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/baby-steps-in-test-driven-development.html"
+                       rel="bookmark"
+                       title="Permalink to Baby Steps in Test Driven Development">
+                        Baby Steps in Test Driven Development
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-08-28T09:07:30+02:00"> Thu 28 August 2014</time>
+    </span>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="/tag/process.html">process</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <h2>I Have a Tooling Problem</h2>
+<p>Like most software developers, I’m picky about the tools I use. However, I tend to go too far. For example, I wanted to start a blog a year ago. Instead of finding the shortest path from A to B, I investigated many blogging solutions. Should I use Wordpress or should I exercise my coding skills by trying to build something myself? If I use Wordpress, do I arrange for hosting myself, or do I use an “all-in-one” provider? I spent so much time researching alternatives that I never wrote a blog.</p>
+<p>This time, I was more pragmatic. The Computer Science Club’s web-savvy officers were using Jekyll for the club website, so I chose Jekyll for my personal site. Also, instead of styling the blog myself, I'm using an open source theme and only customizing the styling later if I feel the need. By dispensing with as many secondary technical concerns as possible, I can do what I set out to do: write.</p>
+<h2>Just Put on Your Shoes and Run</h2>
+<p>At my last job, I shared a cubicle with a <a href="http://en.wikipedia.org/wiki/User_experience_design">UX</a> co-op named Laura. Just as I have a tooling problem, she has an exercise problem. When she wants to try a new sport, she researches it to death and never gets into it. I had mentioned my running habit to her and she wanted get started.</p>
+<p>She researched extensively, watching Youtube videos on proper form, reading a guide to anatomy for runners, and buying new running gear. In my opinion, the <em>right</em> way to start running is just to get out there and run. Run as far as you can until you’re too tired and then run a little farther the next time. Once you’re hitting 20 miles, you can start shopping for the funny water bottles that strap to your hands, but don’t overcomplicate matters by worrying about such details too soon. </p>
+<p>(Eventually, Laura did settle on a <a href="https://www.zombiesrungame.com/">program</a> that focused on incremntal improvement over doing everything at once.)</p>
+<h2>Getting Started with Test Driven Development</h2>
+<p>I’ve been enamored with the idea of <a href="http://en.wikipedia.org/wiki/Tdd">Test Driven Development (TDD)</a> for a while now. For the uninitiated, the thrust of TDD is to write unit tests for your application code before you write the code itself. There are many benefits to this approach, but lots of people on the internet can <a href="http://martinfowler.com/bliki/TestDrivenDevelopment.html">explain them</a> better than I can.</p>
+<p>I decided to use TDD for projects and examples in my Operating Systems class. I almost fell right into the trap of over-researching and under-executing. There are lots of frameworks out there, so I should find the best one for me, right?</p>
+<p>Well, those frameworks are designed for professionals writing production-grade systems code. I am a student writing toy programs to better understand Linux. Starting out in TDD by adopting a full-featured framework would be like starting to run by waking up at 5 AM for a 10-mile uphill trail run. What I really need is a gentle jog around the block. I don’t need to do everything right; I just need to ease into the test-first mindset.</p>
+<p>So, alongside my first Operating Systems programs, I’ll roll my own ultra-light-weight unit testing framework. I’ll only start considering other frameworks when I encounter problems that they solve. I’ll be sure to report here on how it turns out!</p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<div id="aboutme">
+        <p>
+            <img width="100%" class="img-thumbnail" src="images/arch.jpg"/>
+        </p>
+    <p>
+        <strong>About Will Engler</strong><br/>
+        Right now I'm wandering Latin America while trying to learn more about making good software.
+    </p>
+</div>
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="https://twitter.com/WillEngler"><i class="fa fa-twitter-square fa-lg"></i> Twitter</a></li>
+                <li class="list-group-item"><a href="https://github.com/WillEngler"><i class="fa fa-github-square fa-lg"></i> Github</a></li>
+              </ul>
+            </li>
+
+
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group " id="tags">
+                    <li class="list-group-item tag-1">
+                        <a href="/tag/process.html">
+                            process
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-1">
+                        <a href="/tag/culture.html">
+                            culture
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="/tag/personal.html">
+                            personal
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="/tag/fundamentals.html">
+                            fundamentals
+                        </a>
+                    </li>
+                </ul>
+            </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2015 Will Engler
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+
+</body>
+</html>

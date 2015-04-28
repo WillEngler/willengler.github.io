@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Wayfaring Coder - misc</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">Wayfaring Coder </a></h1>
+                <nav><ul>
+                    <li><a href="/category/culture.html">Culture</a></li>
+                    <li><a href="/category/foundations-of-computing.html">Foundations of Computing</a></li>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                    <li><a href="/category/process.html">Process</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/how-i-learned-to-stop-worrying-about-development-environments-and-love-vagrant.html">How I Learned to Stop Worrying About Development Environments and Love Vagrant</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2014-08-19T11:07:30+02:00">
+                Published: Tue 19 August 2014
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/will-engler.html">Will Engler</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>. </p>
+
+</footer><!-- /.post-info --><h2>Configuring Development Environments Gives Me Migraines</h2>
+<p>For me, setting up a working development environment is one of the most difficult parts about learning a new technology stack. I remember my frustration when I began my co-op and my machine’s configuration would be just slightly different from the other developers’. For weeks, I would install and uninstall Visual Studio support packs, tweak my version control setup, and reconfigure the other software that my group’s software interfaced with. I just wanted to code, but I had to pour so much effort into creating the right environment.</p>
+<p>Setting up a dev environment also dogged me the first time I tried to learn Ruby on Rails. I was installing Ruby, Bundler, and a whole bunch of gems when I started seeing strange errors. I couldn’t figure out how to fix them. Nor could I figure out how to completely retrace my path and start again. That was the as far as that attempt to learn Ruby on Rails ever got.</p>
+<h2>A Clever Solution</h2>
+<p>When I started working with the <a href="http://pitt-csc.github.io/">Pitt Computer Science Club</a>, the other officers proposed using <a href="http://www.vagrantup.com/">Vagrant</a> as a way to easily set up and share development environments across a team. My prayers to the programmer gods had been answered. There is a solution to the environment setup problem. And it’s really cool.</p>
+<p>Vagrant was created by a web dev named Mitchell Hashimoto. He got fed up with setting up and tearing down development environments for all of the web frameworks he worked in for different projects. The basic gist of his solution is this: write a <em>Vagrantfile</em> that specifies a virtual machine (VM) and the software to be installed on it.  Call <code>vagrant up</code> in the directory with the Vagrantfile and Vagrant will use a <em>provider</em> (like Virtualbox or VMWare) to spin up the VM from the <em>box</em> (VM base image) you specified. Then, a <em>provisioner</em> will install the tools you want on the VM and perform any other configuration. A provisioner can be as simple as a shell script, but Vagrant also supports configuration management tools like <a href="http://www.getchef.com/chef/">Chef</a> and <a href="http://www.ansible.com/home">Ansible</a> that can do some fancier things. </p>
+<p>Once the box is running and provisioned, you can start working. Vagrant syncs the folder on the host OS that contains the Vagrantfile with the /vagrant directory on the guest OS. You can compose on your host machine with your favorite text editor and then compile on the guest OS. The real magic comes in when you understand Vagrant’s name. You can mess around in your VM sandbox all you want and when you’re done working, type <code>vagrant destroy</code>. Your sandbox is obliterated and you can start again the next day in a known state with a simple <code>vagrant up</code>.</p>
+<h2>An Unpaid Testimonial</h2>
+<p>I’ve only been playing with Vagrant for the last two weeks (mostly to build this blog). I still have a lot to learn. In particular, I would like to learn a configuration management tool instead of provisioning with shell scripts. Still, Vagrant is easy to pick up and it solves a hairy problem. I plan on making a Vagrantfile for each one of my classes this semester. At last, I am walking out of the inner rings of dev environment hell with Vagrant my Virgil.</p>
+<p>I plan on posting a slightly more technical overview soon. I'd like to share some of the specific roadblocks I encountered when I was getting everything set up. In the mean time, Vagrant's <a href="http://docs.vagrantup.com/v2/getting-started/index.html">Getting Started</a> page is very helpful if you want to dive in.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/hello-world.html" rel="bookmark"
+                           title="Permalink to "Hello, World!"">"Hello, World!"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-08-18T10:04:57+02:00">
+                Published: Mon 18 August 2014
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/will-engler.html">Will Engler</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>. </p>
+
+</footer><!-- /.post-info -->                <p>It’s been two years since I wrote a “Hello, World!” program for my first computer science class. I enjoyed that class so much that I switched my major. The introductory CS curriculum was neatly organized, gently introducing me to data structures and systems software. “This is easy,” I thought ...</p>
+                <a class="readmore" href="/hello-world.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://twitter.com/WillEngler">@willengler</a></li>
+                            <li><a href="https://github.com/WillEngler">Code!</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

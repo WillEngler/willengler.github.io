@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Vagrant on Windows - Wayfaring Coder</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="/images/favicon.ico" rel="icon">
+
+<link rel="canonical" href="/vagrant-on-windows.html">
+
+        <meta name="author" content="Will Engler" />
+        <meta name="keywords" content="Process" />
+        <meta name="description" content="My Dell laptop came preinstalled with Ubuntu Linux. I thought this was pretty cool, but there were annoying issues with my networking driver that I could never resolve. I finally said screw it and started running a clean install of Windows 8.1. I reasoned that I could use Windows ..." />
+
+        <meta property="og:site_name" content="Wayfaring Coder" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Vagrant on Windows"/>
+        <meta property="og:url" content="/vagrant-on-windows.html"/>
+        <meta property="og:description" content="My Dell laptop came preinstalled with Ubuntu Linux. I thought this was pretty cool, but there were annoying issues with my networking driver that I could never resolve. I finally said screw it and started running a clean install of Windows 8.1. I reasoned that I could use Windows ..."/>
+        <meta property="article:published_time" content="2014-08-25" />
+            <meta property="article:section" content="Technical" />
+            <meta property="article:tag" content="Process" />
+            <meta property="article:author" content="Will Engler" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.united.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+Wayfaring Coder            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/category/nontechnical.html">Nontechnical</a>
+                        </li>
+                        <li class="active">
+                            <a href="/category/technical.html">Technical</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/vagrant-on-windows.html"
+                       rel="bookmark"
+                       title="Permalink to Vagrant on Windows">
+                        Vagrant on Windows
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-08-25T07:05:00+02:00"> Mon 25 August 2014</time>
+    </span>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="/tag/process.html">Process</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>My Dell laptop came preinstalled with Ubuntu Linux. I thought this was pretty cool, but there were annoying issues with my networking driver that I could never resolve. I finally said screw it and started running a clean install of Windows 8.1. I reasoned that I could use Windows for personal computing and virtualization for development environments.</p>
+<p>In case any readers were swayed by my <a href="{% post_url 2014-08-19-vagrant-intro %}">earlier post on Vagrant</a> and want to use it on a Windows machine, here are some traps to watch out for.</p>
+<h2>Running Virtualbox</h2>
+<p>I chose <a href="https://www.virtualbox.org/">Virtualbox</a> as my virtualization provider. Unfortunately, the most recent stable release doesn’t play well with common Windows antivirus software. The Pitt IT department installed Symantec antivirus on my computer when I switched to Windows. The way Symantec guards against .dll injection prevented Virtualbox from working on my machine. I just uninstalled Symantec and enabled the Windows Defender antivirus instead.</p>
+<h2>End of the Line</h2>
+<p>End of line characters present a thornier issue. UNIX-like systems like Mac OSX and Linux use a line feed (LF) character to denote the end of a line in a text file. Windows uses a carriage return and then a line feed (CRLF). The whole notion of these characters survives from the days of using teletypes as human-machine interfaces. </p>
+<p>So, what happens when you compose a bash script on a Windows host OS and try to run it on a Linux guest OS? Bad things. I switched the settings in my text editor (Sublime) to Unix-style line endings and that solved the immediate problem.</p>
+<h2>But What about Git?</h2>
+<p>Still, I fretted about what would happen when I committed my files to source control. As is recommended for Windows developers, I had configured Git to automatically convert text files to LF line endings on commit and convert back to CRLF when I bring them into a working directory (this is stored in the <a href="http://adaptivepatchwork.com/2012/03/01/mind-the-end-of-your-line/">coreauto.crlf</a> setting). I reasoned that having files in the same directory needing different line endings would throw up some issues. After all, the Vagrantfile is read on Windows, but shell scripts and actual project code is read on Linux. I researched the issue and looked into configuring .gitattributes files and changing my git coreauto.crlf settings on a per-repository basis. </p>
+<p>Then I decided that I should first try committing and pulling in the naïve, Windows-default fashion. And I haven’t had any problems! While I’m pleased that I don’t need to do any more config twiddling, I’m still unsettled. I don’t understand how these line endings are taking care of themselves. If I see any strange behavior in the future, I’ll have a likely suspect. </p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<div id="aboutme">
+        <p>
+            <img width="100%" class="img-thumbnail" src="images/arch.jpg"/>
+        </p>
+    <p>
+        <strong>About Will Engler</strong><br/>
+        Right now I'm wandering Latin America while trying to learn more about making good software.
+    </p>
+</div>
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="https://twitter.com/WillEngler"><i class="fa fa-twitter-square fa-lg"></i> Twitter</a></li>
+                <li class="list-group-item"><a href="https://github.com/WillEngler"><i class="fa fa-github-square fa-lg"></i> Github</a></li>
+              </ul>
+            </li>
+
+
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group " id="tags">
+                    <li class="list-group-item tag-1">
+                        <a href="/tag/process.html">
+                            process
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-1">
+                        <a href="/tag/culture.html">
+                            culture
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="/tag/personal.html">
+                            personal
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="/tag/fundamentals.html">
+                            fundamentals
+                        </a>
+                    </li>
+                </ul>
+            </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2015 Will Engler
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+
+</body>
+</html>
