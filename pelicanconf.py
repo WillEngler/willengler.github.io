@@ -9,7 +9,6 @@ SITEURL = ''
 PATH = 'content'
 THEME = 'pelican-bootstrap3'
 FAVICON = 'images/favicon.ico'
-DISQUS_SITENAME = "wayfaringcoder"
 
 ABOUT_ME = "Right now I'm wandering Latin America while trying to learn more about making good software."
 AVATAR = 'images/arch.jpg'
@@ -35,6 +34,3 @@ SOCIAL = (('Twitter', 'https://twitter.com/WillEngler'),
 DEFAULT_PAGINATION = False
 
 STATIC_PATHS = ['images']
-
-# Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
