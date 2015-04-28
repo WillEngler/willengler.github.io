@@ -9,7 +9,7 @@ SITEURL = ''
 PATH = 'content'
 THEME = 'pelican-bootstrap3'
 FAVICON = 'images/favicon.ico'
-
+DISQUS_SITENAME = "wayfaringcoder"
 
 ABOUT_ME = "Right now I'm wandering Latin America while trying to learn more about making good software."
 AVATAR = 'images/arch.jpg'
