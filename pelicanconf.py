@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = 'Will Engler'
 SITENAME = 'Wayfaring Coder'
-SITEURL = 'http://willengler.github.io'
+SITEURL = 'https://github.com/WillEngler/willengler.github.io/tree/prepare'
 
 PATH = 'content'
 THEME = 'pelican-bootstrap3'

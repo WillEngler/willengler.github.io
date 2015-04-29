@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Why Read Structure and Interpretation of Computer Programs - Wayfaring Coder</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="http://willengler.github.io/images/favicon.ico" rel="icon">
+
+<link rel="canonical" href="http://willengler.github.io/why-read-structure-and-interpretation-of-computer-programs.html">
+
+        <meta name="author" content="Will Engler" />
+        <meta name="keywords" content="sicp" />
+        <meta name="description" content="I&#39;m starting a trans-continental bookclub this Summer to work through the classic Structure and Interpretation of Computer Programs. So far there&#39;s me (South America - eventually), Wesley Bermbach (Germany - eventually), and hopefully Joel Roggeman (Seattle, USA - eventually). With this post I want to convince you to join us. What ..." />
+
+        <meta property="og:site_name" content="Wayfaring Coder" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Why Read Structure and Interpretation of Computer Programs"/>
+        <meta property="og:url" content="http://willengler.github.io/why-read-structure-and-interpretation-of-computer-programs.html"/>
+        <meta property="og:description" content="I&#39;m starting a trans-continental bookclub this Summer to work through the classic Structure and Interpretation of Computer Programs. So far there&#39;s me (South America - eventually), Wesley Bermbach (Germany - eventually), and hopefully Joel Roggeman (Seattle, USA - eventually). With this post I want to convince you to join us. What ..."/>
+        <meta property="article:published_time" content="2015-04-29" />
+            <meta property="article:section" content="Technical" />
+            <meta property="article:tag" content="sicp" />
+            <meta property="article:author" content="Will Engler" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://willengler.github.io/theme/css/bootstrap.united.min.css" type="text/css"/>
+    <link href="http://willengler.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="http://willengler.github.io/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://willengler.github.io/theme/css/style.css" type="text/css"/>
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://willengler.github.io/" class="navbar-brand">
+Wayfaring Coder            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li >
+                            <a href="http://willengler.github.io/category/nontechnical.html">Nontechnical</a>
+                        </li>
+                        <li class="active">
+                            <a href="http://willengler.github.io/category/technical.html">Technical</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="http://willengler.github.io/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://willengler.github.io/why-read-structure-and-interpretation-of-computer-programs.html"
+                       rel="bookmark"
+                       title="Permalink to Why Read Structure and Interpretation of Computer Programs">
+                        Why Read Structure and Interpretation of Computer Programs
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-04-29T09:46:30-06:00"> Wed 29 April 2015</time>
+    </span>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://willengler.github.io/tag/sicp.html">sicp</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>I'm starting a trans-continental bookclub this Summer to work through the classic <a href="http://sarabander.github.io/sicp/html/index.xhtml">Structure and Interpretation of Computer Programs</a>.
+So far there's me (South America - eventually), Wesley Bermbach (Germany - eventually), and hopefully Joel Roggeman (Seattle, USA - eventually).
+With this post I want to convince you to join us.</p>
+<h2>What Is It?</h2>
+<p>SICP, as the cool kids call it, was the text for MIT's <a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/">introductory computer science course</a> for some decades.
+Although it was used for first year undergrads, it gets heavy quick.
+Here's a <a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/video-lectures/">series of lectures</a> going along with the book that the authors Abelson and Sussman presented at Hewlett-Packard.
+If you browse those lecture titles or the book's table of contents, you'll see that the book covers a <em>lot</em> of ground starting from first principles.</p>
+<h2>What Does it Cover?</h2>
+<p>Here's a brief (probably inaccurate) summary based on some skimming.
+Using Scheme, a dialect of LISP, you start by learning the essentials of functional programming.
+(For the hard-core FP-ers out there, I should note that Scheme is <strong>not</strong> referentially transparent.)
+For most of us, this will cause some shocks. 
+By the end of the first chapter, you write some cool programs - like a procedure for finding the nth root of a number - with nary a loop in sight.
+In chapter 2, you move on to data structures and write things like a symbolic differentiation program.
+In chapter 3, we learn about two ways to structure large programs: objects - an approach we're all familiar with, and streams, which are seeing a resurgence nowadays.
+Then chapter 4 gets into the <em>really</em> juicy stuff: "metalinguistic abstraction". 
+It walks us through the creation of a "metacircular evaluator," a Scheme program that evaluates Scheme programs!
+Then you go MAD with power and start tinkering with the language, adding in lazy evaluation and even making a Prolog interpreter!
+But we must go Deeper! In chapter 5, you look at how Scheme is implemented on a physical machine (like with registers) and try your hand at compilation.</p>
+<h2>Why Should I care?</h2>
+<p>You wouldn't read this book to put "experience in LISP" on your resume (although Clojure is gaining traction, for what that's worth).
+You would read this book to explode your head a little, to relearn what you already know but in a different way.
+<a href="http://www.michaelnielsen.org/ddi/lisp-as-the-maxwells-equations-of-software/">This long blog post</a> on why LISP is the Maxwell's Law of programming really sold me on why LISP is good as a mind-expansion tool.</p>
+<h2>I'm Sold! Now What?</h2>
+<p>The book is online in a variety of formats. I like <a href="http://sarabander.github.io/sicp/html/index.xhtml#SEC_Contents">this HTML version</a>.
+Talk to me or leave a comment if you want to join the SICP bookclub.
+I made a Slack team for informal discussions and troubleshooting that I can invite you to.
+I'm posting my solutions to exercises <a href="https://github.com/WillEngler/sicp-solutions">on Github</a> so that we can compare our solutions.</p>
+<p>Also, I plan to post regularly here with my thoughts on what I've read so far.
+I'd like to use the comments here to discuss the book in public so that people who are just curious but don't want to dive deep can see what we're up to.
+And if you want to write posts of your own, that'd be awesome if you started discussions on your own blog.
+Or send a pull request with a markdown document to willengler.github.io and I can add a guest post to mine.</p>
+<p>I don't think we should have a set schedule, so this will be an asynchronous bookclub. 
+When you get to a certain section in the book that's been covered, join the discussion then.
+I imagine it'll be kinda like how I look at Game of Thrones episode recaps once I finally got around to them years later.</p>
+<p>And if nobody joins me, that's ok. 
+I'll blog into the void and leave chapter recaps for whomever wanders this corner of the internet years from now.</p>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'wayfaringcoder'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'why-read-structure-and-interpretation-of-computer-programs';
+                var disqus_url = 'http://willengler.github.io/why-read-structure-and-interpretation-of-computer-programs.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<div id="aboutme">
+        <p>
+            <img width="100%" class="img-thumbnail" src="images/arch.jpg"/>
+        </p>
+    <p>
+        <strong>About Will Engler</strong><br/>
+        Right now I'm wandering Latin America while trying to learn more about making good software.
+    </p>
+</div>
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="https://twitter.com/WillEngler"><i class="fa fa-twitter-square fa-lg"></i> Twitter</a></li>
+                <li class="list-group-item"><a href="https://github.com/WillEngler"><i class="fa fa-github-square fa-lg"></i> Github</a></li>
+              </ul>
+            </li>
+
+
+
+            <li class="list-group-item"><a href="http://willengler.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group " id="tags">
+                    <li class="list-group-item tag-1">
+                        <a href="http://willengler.github.io/tag/culture.html">
+                            culture
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-1">
+                        <a href="http://willengler.github.io/tag/process.html">
+                            process
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="http://willengler.github.io/tag/personal.html">
+                            personal
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://willengler.github.io/tag/sicp.html">
+                            sicp
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://willengler.github.io/tag/fundamentals.html">
+                            fundamentals
+                        </a>
+                    </li>
+                </ul>
+            </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2015 Will Engler
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="http://willengler.github.io/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://willengler.github.io/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://willengler.github.io/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'wayfaringcoder'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>
