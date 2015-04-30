@@ -59,7 +59,7 @@ In large part for my own reference, here's how I get a session started:
 * `emacs my-file.scm &` to open emacs in a background process.
 * If I have a .scm file opened, Emacs knows to enter scheme mode.
 * `C-x 3` to make a second window, split vertically.
-* Then I need to start a REPL like so: `M-x run scheme`.
+* Then I need to start a REPL like so: `M-x run-scheme`.
 
 And here are some of the commands I've learned so far that are a little less common than say, opening a file or copying and pasting.
 
