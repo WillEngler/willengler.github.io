@@ -63,7 +63,7 @@ In large part for my own reference, here's how I get a session started:
 
 And here are some of the commands I've learned so far that are a little less common than say, opening a file or copying and pasting.
 
-* `M-x o` to switch to the **o**ther window.
+* `C-x o` to switch to the **o**ther window.
 * `C-c C-l` to **l**oad the scheme file I'm editing into the REPL.
 * `C-x C-e` to **e**xecute the nearest expression in the REPL. (This command is gold!)
 * `C-M-f, C-M-b` move **f**orwards and **b**ackwards over sexps.
