@@ -2,7 +2,7 @@
 layout: post
 title: On Vagabonding
 author: Will Engler
-tags: personal
+tags: personal, travel
 date: 2015-04-29 12:07:32
 ---
 

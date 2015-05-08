@@ -2,7 +2,7 @@
 layout: post
 title: Acting as if I Were Free
 author: Will Engler
-tags: personal
+tags: personal, travel
 date: 2015-05-06 05:07:32
 ---
 
