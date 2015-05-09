@@ -18,7 +18,7 @@ In essence, it is a programmable computer.
 
 I'd like to trace through Turing's steps to make sure I understand them.
 
-### Step 1: Define a ~Turing~ Computing Machine
+### Step 1: Define a ~~Turing~~ Computing Machine
 
 > We have said that the computable numbers are those whose decimals are calculable by finite means. ...
 > For the present I shall only say that the justification lies in the fact that the human memory is necessarily limited.
