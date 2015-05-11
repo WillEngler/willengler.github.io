@@ -38,4 +38,4 @@ For example, Right_Alt-a gives á.
 ### Can I Do Better?
 
 Probably, but this will do for now.
-Iĺl update later if I find something less janky.
+I'll update later if I find something less janky.

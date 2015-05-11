@@ -92,8 +92,6 @@ Already, we have an enormously important takeaway.
 Turing has shown that all computable numbers can be represented as integers describing their calculation through a machine.
 This, the cardinality of computable numbers is less than the cardinality of natural numbers!
 He states offhandedly that "The computable numbers are thus enumerable."
-Oh, by the way guys, I've resolved the Entscheidungsproblem.
-Hilbert will have to deal.
 
 Turing's lack of enthusiasm hints at bigger plans.
 Now that we can represent any Turing machine as a string of characters, our programmer senses should be tingling.
