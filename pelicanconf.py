@@ -13,7 +13,7 @@ FAVICON = 'images/favicon.ico'
 DISQUS_SITENAME = "wayfaringcoder"
 
 ABOUT_ME = "Right now I'm wandering Latin America while trying to learn more about making good software."
-AVATAR = 'images/arch.jpg'
+AVATAR = 'images/small-arch.jpg'
 BOOTSTRAP_THEME = 'united'
 
 TIMEZONE = 'America/Costa_Rica'
