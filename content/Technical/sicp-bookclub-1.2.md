@@ -4,7 +4,7 @@ title: SICP Book Club: 1.2 (What Are Processes?)
 author: Will Engler
 tags: sicp
 status: draft
-date: 2015-05-01 09:52:44
+date: 2015-05-14 14:34:44
 ---
 
 >In testing primality of very large numbers chosen at random, the chance of stumbling upon a value that fools the
