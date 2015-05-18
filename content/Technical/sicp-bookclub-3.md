@@ -45,9 +45,7 @@ Meanwhile, you can't arbitrarily combine arrays in C, so C arrays are not closed
 
 In section 3.3, A&S ask how we can use the new power of assignment to model data.
 They introduce some classic OO concepts like mutators and selectors.
-Then they show how they can now build a queue.
-Interestingly, they then introduce Discrete Event Simulation as an example of an application where it's helpful to represent stateful objects.
-I once took a whole class in DES, so it's delightful to see it as an extended example.
+Eventually, they introduce Discrete Event Simulation as an example of an application where it's helpful to represent stateful objects.
  
 I made a mental note to come back to the section on constraint-based programming some day.
 It seems so interesting and I'm entirely unfamiliar with it, but I didn't want to go down that rabbit hole.
