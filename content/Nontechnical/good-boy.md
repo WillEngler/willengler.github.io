@@ -9,17 +9,17 @@ date: 2015-05-21 16:20:30
 I stayed with a family this week that reminded me of the intense joy  that comes from living with a close family.
 What made it more striking was that I had recently met travelers who had left everything behind to avoid precisely that.
 
-I met up on Monday with a friend from Pittsburgh, Connor.
+I met up on Monday with Connor, a friend from Pittsburgh.
 I stayed for a few nights with la familia Flores, Connor's Costa Rican host family.
 When people talk about Costa Rican hospitality, they're talking about people like the Floreses.
 They are uncommonly warm as they ask me about my day, patiently correct my Spanish, and insist I take seconds at dinner.
 And Papá is a trickster.
-We conspired to convince Laura, a Chines exchange student in the house, 
+We conspired to convince Laura, a Chinese exchange student in the house, 
 that I am a young millionaire from London touring Latin America to scout new markets for the family business.
  
-The Flores household is a good example of a typically Latin American multigenerational household.
+The Floreses exemplify a typically Latin American multigenerational household.
 In preparation for a month in Medellín, I've been reading the great Colombian novel _One Hundred Years of Solitude_.
-Just as the Buendia estate keeps growing to accomodate their ever-expanding family, 
+Just as the Buendía estate keeps growing to accomodate their ever-expanding family, 
 the Floreses added a second story to house children, than grandchildren, then students who wander in from around the world.
 
 Having all these people together can be joyous.
@@ -31,7 +31,7 @@ Mamá outwits me when we play cards.
 ### Settlers and Wanderers
 
 A few days before I left Pittsburgh, I had a conversation with a friend that typified a common fear of my friends in their young 20's.
-He had been graduated earlier than I did and had been working a job at a big corporation.
+He graduated earlier than I did and had been working a job at a big corporation.
 I enjoyed listening to him vent about kafkaesque weeks when he couldn't do actual work, outrageously wasteful projects, etc..
 He worried that he might some day be content to step on the assembly line, 
 to stay at a job he dislikes because it pays pretty well,
@@ -40,7 +40,7 @@ and then to get married and buy a house just because that's the next thing a goo
 
 In Quepos I met Massimo, an Italian man  who took that fear and went as far in the opposite direction as possible.
 For the last 15 or so years, he hasn't lived in a place for more than 6 months at a time.
-He's travelled the world and picked up six languages.
+He's travelled the world and picked up seven languages.
 He was in New Zealand before Costa Rica.
 He blusters into jobs as a pizza chef using his Italian citizenship as a credential.
 I asked him if he intentionally chose such an unconventional lifestyle.
