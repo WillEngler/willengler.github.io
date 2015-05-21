@@ -9,7 +9,7 @@ date: 2015-05-21 15:46:30
 This has been my favorite week of my journey so far. 
 That is in large part because I got to visit Monteverde, home of Costa Rica's most famous [cloud forest](http://en.wikipedia.org/wiki/Cloud_forest).
 Plus, I got to do so with an old friend from Pittsburgh - Connor - and a new friend - Kat - to be introduced below.
-(This was also a great week because I got to stay with the delightful Flores family in San Jose, but more in them in a later post.)
+(This was also a great week because I got to stay with the delightful Flores family in San Jose, but more on them in a later post.)
 
 Monteverde was so named by American Quakers who fled here to avoid the Korean War draft.
 We happened to meet the grand-daughter of a Quaker refugee on the road yesterday while we were taking a stroll.
