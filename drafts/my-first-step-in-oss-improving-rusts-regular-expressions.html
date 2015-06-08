@@ -15,14 +15,14 @@
 
         <meta name="author" content="Will Engler" />
         <meta name="keywords" content="rust" />
-        <meta name="description" content="As a user, you don&#39;t care if it&#39;s regular, nonregular, irregular, or incontinent. Jeffrey E. F. Friedl in Mastering Regular Expressions on how NFA regex engines with backreferences aren&#39;t - mathematically speaking - regular. I&#39;ve been itching for a while to contribute to an OSS project that I ..." />
+        <meta name="description" content="I&#39;ve been itching for a while to contribute to an OSS project that I can get fired up about. Over the last year, Rust has caught my attention. So when Rust hit 1.0 last month, I decided it was time to make my mark. Stepping into a big ..." />
 
         <meta property="og:site_name" content="Wayfaring Coder: Will Engler's Blog" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="My First Step in OSS: Improving Rust&#39;s Regular Expressions"/>
         <meta property="og:url" content="http://willengler.github.io/drafts/my-first-step-in-oss-improving-rusts-regular-expressions.html"/>
-        <meta property="og:description" content="As a user, you don&#39;t care if it&#39;s regular, nonregular, irregular, or incontinent. Jeffrey E. F. Friedl in Mastering Regular Expressions on how NFA regex engines with backreferences aren&#39;t - mathematically speaking - regular. I&#39;ve been itching for a while to contribute to an OSS project that I ..."/>
-        <meta property="article:published_time" content="2015-06-05" />
+        <meta property="og:description" content="I&#39;ve been itching for a while to contribute to an OSS project that I can get fired up about. Over the last year, Rust has caught my attention. So when Rust hit 1.0 last month, I decided it was time to make my mark. Stepping into a big ..."/>
+        <meta property="article:published_time" content="2015-08-06" />
             <meta property="article:section" content="Technical" />
             <meta property="article:tag" content="rust" />
             <meta property="article:author" content="Will Engler" />
@@ -90,7 +90,7 @@ Wayfaring Coder: Will Engler's Blog            </a>
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-06-05T13:00:30-05:00"> Fri 05 June 2015</time>
+        <i class="fa fa-calendar"></i><time datetime="2015-08-06T17:00:30-05:00"> Thu 06 August 2015</time>
     </span>
 
 
@@ -100,16 +100,10 @@ Wayfaring Coder: Will Engler's Blog            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <blockquote>
-<p>As a user, you don't care if it's regular, nonregular, irregular, or incontinent.</p>
-<blockquote>
-<p>Jeffrey E. F. Friedl in <em>Mastering Regular Expressions</em> on how NFA regex engines with backreferences aren't - mathematically speaking - regular.</p>
-</blockquote>
-</blockquote>
-<p>I've been itching for a while to contribute to an OSS project that I can get fired up about.
+                <p>I've been itching for a while to contribute to an OSS project that I can get fired up about.
 Over the last year, Rust has caught my attention.
 So when Rust hit 1.0 last month, I decided it was time to make my mark.</p>
-<p>Stepping into an OSS project is intimidating, so I thought it might be helpful for other newcomers and even project maintainers if I record my impressions along the way.</p>
+<p>Stepping into a big project is intimidating, so I thought it might be helpful for other newcomers and project maintainers if I record my impressions along the way.</p>
 <h3>Step 1: Find Somewhere to Start</h3>
 <p>I poked around some issues on Github and came across <a href="https://github.com/rust-lang/regex/issues/66">this one</a>.
 I've been curious to learn more about regexes and automata, it was unclaimed, and improving the regex library could make a lot of programs more efficient.
@@ -119,7 +113,7 @@ Both he and <a href="https://github.com/carllerche/">Carl Lerche</a>, another Ru
 The Rust community's reputation of being welcoming to newcomers has been borne out by my experience so far.</p>
 <h3>Step 2: Get Some Context (Why Do We Want a DFA Matcher?)</h3>
 <p>The issue's title reads "Implement a DFA matcher."
-Andrew has already implemented an NFA engine.
+Andrew has already implemented an NFA matcher.
 While I recalled the correspondence between regular languages and finite automata from university,
 I didn't understand why we might prefer DFA's in some cases and NFA's in others.</p>
 <p>I started with <a href="http://regex.info/book.html"><em>Mastering Regular Expressions</em></a>.
@@ -127,11 +121,29 @@ It was a good refresher on regexes from a user's perspective.
 It's overview of the differences in behavior between NFA and DFA engines was particularly helpful.
 For example, I did not know about the "Longest-Leftmost" rule
 (that DFA engines and POSIX-compliant NFA engines will always match the longest possible substring).</p>
-<p>To get a little background on the implementation of regex engines, I consulted <a href="http://en.wikipedia.org/wiki/Compilers:_Principles,_Techniques,_and_Tools">"The Dragon Book"</a>.
-I didn't read too deeply into the algorithms for DFA construction, but now I know where I can look.</p>
-<p>My favorite resource so far is one that Andrew has highlighted on his blog: <a href="https://swtch.com/~rsc/regexp/">a series of blog posts by Russ Cox on implementing fast regex matchers</a>.
-Russ implemented the <a href="https://github.com/google/re2">C++ RE2</a> engine that Rust's regex engine is modeled after.
-(I'd )</p>
+<p>To get a little background on the implementation of regex matchers, I consulted <a href="http://en.wikipedia.org/wiki/Compilers:_Principles,_Techniques,_and_Tools">"The Dragon Book"</a>.
+It was a big help later on.</p>
+<p>Another helpful resource is <a href="https://swtch.com/~rsc/regexp/">a series of blog posts by Russ Cox on implementing fast regex matchers</a>.
+Cox implemented the C++ "RE2" engine that Rust's regex engine is modeled after.
+Cox makes a strong case for using a non-backtracking (two-stack) implementation for NFA simulators.
+Andrew has already implemented the NFA simulation algorithm that Cox recommends.
+Cox goes on to explain how using a lazily constructed DFA when appropriate can yield more performance improvements.
+Best of all, he walks through some implementation details and RE2 is <a href="https://github.com/google/re2">open source</a>. 
+Gold mine!</p>
+<h3>Step 3: Code Archaeology</h3>
+<p>Convinced that a DFA matcher is a good thing to have in a regex library, I needed to come up with an implementation strategy.
+Andrew recommended I start by taking a look at Carl Lerche's <a href="https://github.com/carllerche/automaton">automaton library</a>.
+Carl had already implemented DFA construction, so maybe we could reuse his code.
+I needed to get the lay of the land of both libraries and see if I could bridge them.</p>
+<p>I came to the conclusion that reusing Carl's code was not the way to go (at the moment).
+To keep with the design decisions of the library so far, I'll need to reimplement the lazy DFA construction of RE2.
+I'll point you <a href="https://github.com/rust-lang/regex/issues/66#issuecomment-110025224">here</a> if you want the gory algorithmic details.</p>
+<h3>Step 4: Start Coding</h3>
+<p>Well, not quite.
+I need to take a closer look at Cox's implementation of the lazy DFA matcher and at the existing rust-lang/regex code.
+Then once I have a better idea of what I need to write, I can get cracking on writing a match-only DFA.</p>
+<p>As Andrew has noted, this is a fairly ambitious project for a Rust newbie.
+So</p>
             </div>
             <!-- /.entry-content -->
     <hr/>
@@ -193,8 +205,8 @@ Russ implemented the <a href="https://github.com/google/re2">C++ RE2</a> engine 
             <li class="list-group-item"><a href="http://willengler.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group " id="tags">
                     <li class="list-group-item tag-1">
-                        <a href="http://willengler.github.io/tag/travel.html">
-                            travel
+                        <a href="http://willengler.github.io/tag/sicp.html">
+                            sicp
                         </a>
                     </li>
                     <li class="list-group-item tag-1">
@@ -208,8 +220,8 @@ Russ implemented the <a href="https://github.com/google/re2">C++ RE2</a> engine 
                         </a>
                     </li>
                     <li class="list-group-item tag-1">
-                        <a href="http://willengler.github.io/tag/sicp.html">
-                            sicp
+                        <a href="http://willengler.github.io/tag/travel.html">
+                            travel
                         </a>
                     </li>
                     <li class="list-group-item tag-2">
@@ -218,13 +230,13 @@ Russ implemented the <a href="https://github.com/google/re2">C++ RE2</a> engine 
                         </a>
                     </li>
                     <li class="list-group-item tag-3">
-                        <a href="http://willengler.github.io/tag/fundamentals.html">
-                            fundamentals
+                        <a href="http://willengler.github.io/tag/turing.html">
+                            Turing
                         </a>
                     </li>
                     <li class="list-group-item tag-3">
-                        <a href="http://willengler.github.io/tag/turing.html">
-                            Turing
+                        <a href="http://willengler.github.io/tag/fundamentals.html">
+                            fundamentals
                         </a>
                     </li>
                     <li class="list-group-item tag-4">

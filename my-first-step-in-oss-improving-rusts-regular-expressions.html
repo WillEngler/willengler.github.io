@@ -2,7 +2,7 @@
 <html lang="en"
 >
 <head>
-    <title>"We're All Rather Posh" - Wayfaring Coder: Will Engler's Blog</title>
+    <title>My First Step in OSS: Improving Rust's Regular Expressions - Wayfaring Coder: Will Engler's Blog</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -11,21 +11,20 @@
 
     <link href="http://willengler.github.io/images/favicon.ico" rel="icon">
 
-<link rel="canonical" href="http://willengler.github.io/were-all-rather-posh.html">
+<link rel="canonical" href="http://willengler.github.io/my-first-step-in-oss-improving-rusts-regular-expressions.html">
 
         <meta name="author" content="Will Engler" />
-        <meta name="keywords" content="travel,culture" />
-        <meta name="description" content="On privilege and travel I was out for drinks with Henry and Keira, a lovely English couple I had met at a hostel. Many of the ideas in this essay are stolen from them. We were on the second floor of Stiefel, a trendy bar that would feel at home ..." />
+        <meta name="keywords" content="rust" />
+        <meta name="description" content="I&#39;ve been itching for a while to contribute to an OSS project that I can get fired up about. Over the last year, Rust has caught my attention. So when Rust hit 1.0 last month, I decided it was time to make my mark. Stepping into a big ..." />
 
         <meta property="og:site_name" content="Wayfaring Coder: Will Engler's Blog" />
         <meta property="og:type" content="article"/>
-        <meta property="og:title" content="&#34;We&#39;re All Rather Posh&#34;"/>
-        <meta property="og:url" content="http://willengler.github.io/were-all-rather-posh.html"/>
-        <meta property="og:description" content="On privilege and travel I was out for drinks with Henry and Keira, a lovely English couple I had met at a hostel. Many of the ideas in this essay are stolen from them. We were on the second floor of Stiefel, a trendy bar that would feel at home ..."/>
-        <meta property="article:published_time" content="2015-05-14" />
-            <meta property="article:section" content="Nontechnical" />
-            <meta property="article:tag" content="travel" />
-            <meta property="article:tag" content="culture" />
+        <meta property="og:title" content="My First Step in OSS: Improving Rust&#39;s Regular Expressions"/>
+        <meta property="og:url" content="http://willengler.github.io/my-first-step-in-oss-improving-rusts-regular-expressions.html"/>
+        <meta property="og:description" content="I&#39;ve been itching for a while to contribute to an OSS project that I can get fired up about. Over the last year, Rust has caught my attention. So when Rust hit 1.0 last month, I decided it was time to make my mark. Stepping into a big ..."/>
+        <meta property="article:published_time" content="2015-08-06" />
+            <meta property="article:section" content="Technical" />
+            <meta property="article:tag" content="rust" />
             <meta property="article:author" content="Will Engler" />
 
 
@@ -54,10 +53,10 @@ Wayfaring Coder: Will Engler's Blog            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                        <li class="active">
+                        <li >
                             <a href="http://willengler.github.io/category/nontechnical.html">Nontechnical</a>
                         </li>
-                        <li >
+                        <li class="active">
                             <a href="http://willengler.github.io/category/technical.html">Technical</a>
                         </li>
             </ul>
@@ -78,10 +77,10 @@ Wayfaring Coder: Will Engler's Blog            </a>
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="http://willengler.github.io/were-all-rather-posh.html"
+                    <a href="http://willengler.github.io/my-first-step-in-oss-improving-rusts-regular-expressions.html"
                        rel="bookmark"
-                       title="Permalink to "We're All Rather Posh"">
-                        "We're All Rather Posh"
+                       title="Permalink to My First Step in OSS: Improving Rust's Regular Expressions">
+                        My First Step in OSS: Improving Rust's Regular Expressions
                     </a>
                 </h1>
             </header>
@@ -91,77 +90,61 @@ Wayfaring Coder: Will Engler's Blog            </a>
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-05-14T17:03:21-05:00"> Thu 14 May 2015</time>
+        <i class="fa fa-calendar"></i><time datetime="2015-08-06T17:00:30-05:00"> Thu 06 August 2015</time>
     </span>
 
 
 
 <span class="label label-default">Tags</span>
-	<a href="http://willengler.github.io/tag/travel.html">travel</a>
-        /
-	<a href="http://willengler.github.io/tag/culture.html">culture</a>
+	<a href="http://willengler.github.io/tag/rust.html">rust</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p><em>On privilege and travel</em></p>
-<p>I was out for drinks with Henry and Keira, a lovely English couple I had met at a hostel.
-Many of the ideas in this essay are stolen from them.
-We were on the second floor of <em>Stiefel</em>, a trendy bar that would feel at home in Lawrenceville, Pittsburgh.
-It was tastefully grungy, the waitresses had the right amount of tattoos and piercings, and Lonely Planet spoke highly of their selection of <em>cervezas artesenales</em>.</p>
-<p>We hip travellers sat in our hip bar when Keira shared a revelation she had in Panama.
-Almost everyone she had met on the road was "posh."
-The choice of the word "posh" was important as it reflects an English awareness of class I don't fully grasp.
-Posh does not imply rich.
-Someone who has moderate earnings but exercise worldly taste - like an adjunct sociology professor - can be posh.
-But of course, wealth and poshness correlate.</p>
-<p>Is the number of posh travellers at all surprising?
-Keira said that it shouldn't have surprised her but it did.
-The image of the backpacker seems contrary to wealth.
-They are scruffy vagrants who find rooms for dollars per night while proper tourists stay in all-inclusive resorts.
-It costs surprisingly little.
-My flight to Costa Rica cost around $300 and I've been staying in nice hostels for $10 a night.</p>
-<p>But I risk conflating wealth with poshness.
-Vampire Weekend - the embodiment of American poshness - uses world travel to characterize an ex-lover being brushed off.
-Ezra Koenig sings in <em>M79</em>:</p>
-<blockquote>
-<p>No excuse to be so callous.</p>
-<p>Dress yourself in flaming madras.</p>
-<p>Charm your way across the Khyber pass.</p>
-</blockquote>
-<p>OK you worldly waste of space; why don't you go on another one of those journeys you jabber on about and leave me alone.</p>
-<p>Why is backpacking so posh?
-I think a big component is opportunity cost, what you are not doing at home.
-For example, I'm well-off and I plan to spend around $7500 on this trip.
-But that outlay is modest compared to the money I will not be earning as a full-time software engineer for the next four or five months.
-If I had three kids and a mortgage, picking up and leaving for half a year would be irresponsible.</p>
-<p>So poshness can come through the obligations backpackers don't have. They're less likely to have families to support or massive student debt to pay down.
-They are rich in time.</p>
-<p>If one half of the poshness of backpacking is opportunity, the other half is inclination.
-Once you have the time and money, you need to be convinced that the $7500 is not better on a nicer car.
-That will usually come down to how much you value education and worldliness.
-That's in part a personal trait, but it is also given to us by our families and schools.
-Indie bands wind this worth mocking too, as worldliness can become another good to flaunt rather than a pursuit of knowledge.
-In <em>Singer Songwriter</em> by Okkervil River, Will Sheff sings of an unbearable lover who comes from the "right" kind of family:</p>
-<blockquote>
-<p>You wrote your thesis on the Gospel of Thomas.</p>
-<p>You shot reversal film in Angkor Wat.</p>
-<p>...</p>
-<p>You've got taste.</p>
-<p>You've got taste.</p>
-<p>What a waste that it's all that you have.</p>
-</blockquote>
-<p>In my limited (one week's) experience, it seems backpacking is usually a luxury of the posh that rewards them with cultural cachet, making them posher.
-That being said, I've come across unposh folks.
-There are people on holiday for a few weeks, seeing the sights.
-There are some people who have adopted a less materialistic mindset than most of us.
-They bounce around, find work for a while, and keep going (cf. <a href="http://www.amazon.com/Vagabonding-Uncommon-Guide-Long-Term-Travel/dp/0812992180">Vagabonding</a>).</p>
-<p>Still, most people I encounter are posh Westerners.
-Is there anything wrong with that?
-I don't know.
-But I do conclude that I must be grateful for the privilege to go on this trip.
-It's a privilege that many of my friends don't have.
-And that's just comparing my privilege to people back home.
-To compare my privilege against people who actually live in the places I visit is an entirely different - and more problematic - topic for another essay.</p>
+                <p>I've been itching for a while to contribute to an OSS project that I can get fired up about.
+Over the last year, Rust has caught my attention.
+So when Rust hit 1.0 last month, I decided it was time to make my mark.</p>
+<p>Stepping into a big project is intimidating, so I thought it might be helpful for other newcomers and project maintainers if I record my impressions along the way.</p>
+<h3>Step 1: Find Somewhere to Start</h3>
+<p>I poked around some issues on Github and came across <a href="https://github.com/rust-lang/regex/issues/66">this one</a>.
+I've been curious to learn more about regexes and automata, it was unclaimed, and improving the regex library could make a lot of programs more efficient.
+So rust-lang/regex #66 it is.</p>
+<p>I emailed <a href="http://blog.burntsushi.net/">Andrew Gallant aka BurntSushi</a> - who has written much of the regex library - and he was very helpful in pointing me in the right direction.
+Both he and <a href="https://github.com/carllerche/">Carl Lerche</a>, another Rustacean working on automata, kindly offered to field any questions via IRC.
+The Rust community's reputation of being welcoming to newcomers has been borne out by my experience so far.</p>
+<h3>Step 2: Get Some Context (Why Do We Want a DFA Matcher?)</h3>
+<p>The issue's title reads "Implement a DFA matcher."
+Andrew has already implemented an NFA matcher.
+While I recalled the correspondence between regular languages and finite automata from university,
+I didn't understand why we might prefer DFA's in some cases and NFA's in others.</p>
+<p>I started with <a href="http://regex.info/book.html"><em>Mastering Regular Expressions</em></a>.
+It was a good refresher on regexes from a user's perspective.
+It's overview of the differences in behavior between NFA and DFA engines was particularly helpful.
+For example, I did not know about the "Longest-Leftmost" rule
+(that DFA engines and POSIX-compliant NFA engines will always match the longest possible substring).</p>
+<p>To get a little background on the implementation of regex matchers, I consulted <a href="http://en.wikipedia.org/wiki/Compilers:_Principles,_Techniques,_and_Tools">"The Dragon Book"</a>.
+It was a big help later on.</p>
+<p>Another helpful resource is <a href="https://swtch.com/~rsc/regexp/">a series of blog posts by Russ Cox on implementing fast regex matchers</a>.
+Cox implemented the C++ "RE2" engine that Rust's regex engine is modeled after.
+Cox makes a strong case for using a non-backtracking (two-stack) implementation for NFA simulators.
+Andrew has already implemented the NFA simulation algorithm that Cox recommends.
+Cox goes on to explain how using a lazily constructed DFA when appropriate can yield more performance improvements.
+Best of all, he walks through some implementation details and RE2 is <a href="https://github.com/google/re2">open source</a>. 
+Gold mine!</p>
+<h3>Step 3: Code Archaeology</h3>
+<p>Convinced that a DFA matcher is a good thing to have in a regex library, I needed to come up with an implementation strategy.
+Andrew recommended I start by taking a look at Carl Lerche's <a href="https://github.com/carllerche/automaton">automaton library</a>.
+Carl had already implemented DFA construction, so maybe we could reuse his code.
+I needed to get the lay of the land of both libraries and see if I could bridge them.
+Thankfully, Andrew and Carl write clean code, so it was straightforward to navigate.</p>
+<p>I came to the conclusion that reusing Carl's code was not the way to go (at the moment).
+To keep with the design decisions of the library so far, I'll need to reimplement the lazy DFA construction of RE2.
+I'll point you <a href="https://github.com/rust-lang/regex/issues/66#issuecomment-110025224">here</a> if you want the gory algorithmic details.</p>
+<h3>Step 4: Start Coding</h3>
+<p>Well, not quite.
+I need to take a closer look at Cox's implementation of the lazy DFA matcher and at the existing rust-lang/regex code.
+Then once I have a better idea of what I need to write, I can get cracking on writing a simple match-only DFA engine to start.</p>
+<p>As Andrew has noted, this is an ambitious project for a Rust newbie.
+So it should be a fun adventure!</p>
             </div>
             <!-- /.entry-content -->
     <hr/>
@@ -173,8 +156,8 @@ To compare my privilege against people who actually live in the places I visit i
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
             var disqus_shortname = 'wayfaringcoder'; // required: replace example with your forum shortname
 
-                    var disqus_identifier = 'were-all-rather-posh';
-                var disqus_url = 'http://willengler.github.io/were-all-rather-posh.html';
+                    var disqus_identifier = 'my-first-step-in-oss-improving-rusts-regular-expressions';
+                var disqus_url = 'http://willengler.github.io/my-first-step-in-oss-improving-rusts-regular-expressions.html';
 
             var disqus_config = function () {
                 this.language = "en";
