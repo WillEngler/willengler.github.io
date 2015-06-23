@@ -31,7 +31,8 @@ LINKS = None
 
 # Social widget
 SOCIAL = (('Twitter', 'https://twitter.com/WillEngler'),
-          ('Github', 'https://github.com/WillEngler'),)
+          ('Github', 'https://github.com/WillEngler'),
+          ('Resumé', 'http://will-resume.bitballoon.com/'))
 
 DEFAULT_PAGINATION = False
 

@@ -3,7 +3,7 @@ layout: post
 title: My First Step in OSS: Improving Rust's Regular Expressions
 author: Will Engler
 tags: rust
-date: 2015-08-06 17:00:30
+date: 2015-06-06 17:00:30
 ---
 
 I've been itching for a while to contribute to an OSS project that I can get fired up about.
