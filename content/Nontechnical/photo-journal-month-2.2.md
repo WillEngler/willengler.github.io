@@ -107,6 +107,14 @@ Here's what arrived when a friend ordered a bandeja _superpaisa_ at a restaurant
 
 ![medellin](/images/medellin/bandeja.JPG)
 
+The name of this little restaurant is gently making fun of the paisas' love for _arepas_, ground maize flatbreads.
+_Arepas con todo_ ~ Arepas with Everything.
+It's not uncommon for a family in Medellín to eat arepas with every meal, to the consternation of some students living with host families.
+"If I see one more ****ing arepa..." I hear sometimes.
+I quite like them.
+
+![medellin](/images/medellin/arepas.JPG)
+
 In the industrial district, a friend and I visited the _Cerveceria Libre_ craft brewery and got a behind the scenes tour.
 
 ![medellin](/images/medellin/cerveceria.JPG)
