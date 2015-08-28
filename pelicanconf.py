@@ -12,13 +12,14 @@ THEME = 'pelican-bootstrap3'
 FAVICON = 'images/favicon.ico'
 DISQUS_SITENAME = "wayfaringcoder"
 
-ABOUT_ME = """I'm a recent college grad beginning his career
-              in software development. I'm on the job market,
-              so please get in touch if you're hiring."""
+ABOUT_ME = """I'm a software developer living in Chicago.
+              This blog is a place for reflections on technology and culture
+              that don't relate to my job."""
+
 AVATAR = 'images/monteverde/willVista.JPG'
 BOOTSTRAP_THEME = 'united'
 
-TIMEZONE = 'America/Panama'
+TIMEZONE = 'America/Chicago'
 
 DEFAULT_LANG = 'en'
 
@@ -34,7 +35,7 @@ LINKS = None
 # Social widget
 SOCIAL = (('Twitter', 'https://twitter.com/WillEngler'),
           ('Github', 'https://github.com/WillEngler'),
-          ('Resumé', 'http://will-resume.bitballoon.com/'))
+          ('My Job', 'http://plenar.io/'))
 
 DEFAULT_PAGINATION = False
 
