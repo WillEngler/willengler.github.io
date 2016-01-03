@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Turing's Universal Machine - Wayfaring Coder: Will Engler's Blog</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="http://willengler.github.io/images/favicon.ico" rel="icon">
+
+<link rel="canonical" href="http://willengler.github.io/turings-universal-machine.html">
+
+        <meta name="author" content="Will Engler" />
+        <meta name="keywords" content="Turing" />
+        <meta name="description" content="Alan Turing&#39;s definition of programming: An activity by which a digital computer is made to do a man&#39;s will, by expressing this will suitably on punched tapes. I&#39;m still working through Petzold&#39;s superb The Annotated Turing. I&#39;ve reached an important milestone. Turing has defined a ..." />
+
+        <meta property="og:site_name" content="Wayfaring Coder: Will Engler's Blog" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Turing&#39;s Universal Machine"/>
+        <meta property="og:url" content="http://willengler.github.io/turings-universal-machine.html"/>
+        <meta property="og:description" content="Alan Turing&#39;s definition of programming: An activity by which a digital computer is made to do a man&#39;s will, by expressing this will suitably on punched tapes. I&#39;m still working through Petzold&#39;s superb The Annotated Turing. I&#39;ve reached an important milestone. Turing has defined a ..."/>
+        <meta property="article:published_time" content="2015-05-09" />
+            <meta property="article:section" content="Technical" />
+            <meta property="article:tag" content="Turing" />
+            <meta property="article:author" content="Will Engler" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://willengler.github.io/theme/css/bootstrap.united.min.css" type="text/css"/>
+    <link href="http://willengler.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="http://willengler.github.io/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://willengler.github.io/theme/css/style.css" type="text/css"/>
+
+
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://willengler.github.io/" class="navbar-brand">
+Wayfaring Coder: Will Engler's Blog            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li >
+                            <a href="http://willengler.github.io/category/nontechnical.html">Nontechnical</a>
+                        </li>
+                        <li class="active">
+                            <a href="http://willengler.github.io/category/technical.html">Technical</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="http://willengler.github.io/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://willengler.github.io/turings-universal-machine.html"
+                       rel="bookmark"
+                       title="Permalink to Turing's Universal Machine">
+                        Turing's Universal Machine
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-05-09T13:07:30-05:00"> Sat 09 May 2015</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://willengler.github.io/tag/turing.html">Turing</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <blockquote>
+<p>Alan Turing's definition of programming:</p>
+<p>An activity by which a digital computer is made to do a man's will, by expressing this will suitably on punched tapes.</p>
+</blockquote>
+<p>I'm still working through Petzold's superb <em>The Annotated Turing</em>.
+I've reached an important milestone.
+Turing has defined a Universal Computing Machine (which I will refer to as the Universal Turing Machine - UTM).
+It can replicate the operation of any other Turing machine.
+In essence, it is a programmable computer.</p>
+<p>I'd like to trace through Turing's steps to make sure I understand them.</p>
+<h3>Step 1: Define a Computing Machine</h3>
+<blockquote>
+<p>We have said that the computable numbers are those whose decimals are calculable by finite means. ...
+For the present I shall only say that the justification lies in the fact that the human memory is necessarily limited.</p>
+<blockquote>
+<p>Alan Turing</p>
+</blockquote>
+</blockquote>
+<p>Turing's computing machines are simple. 
+He focuses in particular on <em>circle-free, automatic computing machines</em>.
+<em>Automatic</em> means it does its work with no intervention - no run-time input.
+<em>Computing</em> means it prints a sequence of 0's and 1's that represents a binary number between 0 and 1.
+<em>Circle-free</em> means that it never terminates;
+even if it is computing, say, 1/4 (.01 in binary), it will keep printing trailing 0's forever.</p>
+<p>What does he mean by <em>machine</em>?
+The machine shall operate on an infinitely long roll of paper.
+The paper is divided into squares, like memory addresses.
+The machine can print symbols symbols onto squares and scan symbols from them.
+The machine can move left or right one square at a time.</p>
+<p>How does the machine know where to go and what symbols to print?
+A machine shall have a finite number of <em>m-configurations</em>.
+An m-configuration defines which operation to perform for each possible symbol it might encounter. and what m-configuration to transition to after it has performed the operation.
+Here I take operation to mean what symbol to print (if any) and which direction to move (left or right).</p>
+<h3>Step 2: Define Helper Functions</h3>
+<p>Doing anything interesting with such a basic machine gets annoying quickly.
+To lay the groundwork for the UTM, Turing introduces several notational shortcuts that can always be expanded to the original definition of a computing machine.</p>
+<p>The most important shorthand is the <em>m-function</em> - a sort of subroutine.
+Turing takes great pains to note that there is nothing dynamic about his m-functions.
+Infinite nesting of m-functions is prohibited.
+I like to think of the m-functions like C++ generics.
+When you're writing them, it seems like they can dispatch on an arbitrary number of types.
+But really, the compiler just creates all necessary forms of your generic function at compile-time.
+In a similar way, Turing's m-functions always "compile down" to a finite number of m-configurations.</p>
+<p>With the magic of function composition in hand, Turing goes on to define some useful m-functions. 
+One example is a copy and erase function that will erase all symbols "marked" with a given value and add them to the end of the tape.
+What "marked" means is one of <strong>many</strong> implementation details I'm eliding.</p>
+<p>Petzold's writing is gold here.
+He rags on Turing for unfortunate function and variable names.
+In Turing's defense, <em>Code Complete</em> was not available in 1936.
+(Fun fact:Turing casually uses function overloading to define his m-functions.
+That's a luxury I don't have in Python.)</p>
+<h3>Step 3: Encode Computing Machines As Numbers</h3>
+<p>Up to now, Turing has used tables and words to define a machine's m-configurations.
+As a human, I appreciate that, but it's hard for a computer to read.</p>
+<p>Because the definition of an m-configuration is so regular, it is straightforward to translate them into strings of symbols.
+Each combination of m-configuration and currently scanned symbol maps to an operation and the next m-configuration.
+So we can enumerate all such mappings as a quintuple:
+the current m-configuration, the current symbol, the symbol to print, the direction to move, and the next m-configuration.
+I'll call each quintuple an <em>instruction</em>.
+Thus, a Turing Machine can be represented as a list of instructions, each containing five symbols.</p>
+<p>From a list of quintuples, it is easy to substitute numbers for symbols and create a massive integer.
+In this way, every Turing machine is represented by a unique integer.
+Conversely, a given integer may or may not represent a valid Turing machine.
+Petzold notes that this conclusion should not surprise us.
+After all, executables are just long binary numbers chunked into bytes.
+As software developers, we transform algorithms into integers for a living.</p>
+<p>Interestingly, a computable number can be constructed with more than one Turing machine.
+Just as there are many ways to write FizzBuzz, there are many Turing machines that compute the digits of Pi.
+Thus computable sequences (and computable numbers) can be represented by more than one integer.</p>
+<p>Already, we have an enormously important takeaway.
+Turing has shown that all computable numbers can be represented as integers describing their calculation through a machine.
+This, the cardinality of computable numbers is less than the cardinality of natural numbers!
+He states offhandedly that "The computable numbers are thus enumerable."</p>
+<p>Turing's lack of enthusiasm hints at bigger plans.
+Now that we can represent any Turing machine as a string of characters, our programmer senses should be tingling.
+You know what's good at manipulating strings of characters: Turing machines!
+Turing will use the symbolic, instructional representation of Turing machines as input to the UTM.</p>
+<h3>Step 4: Create the Universal Machine</h3>
+<p>My first reaction to Turing's definition of the universal machine was similar to my reaction to the first Scheme interpreter I saw: "That's it?"
+In the original paper, the UTM only takes two pages to define.
+Emil Post famously pointed out a few bugs in Turing's design, but it gets the idea across.</p>
+<p>I didn't care to read too closely into the implementation details, but here's the main idea.
+The UTM is initialized with the symbolic representation of a TM (a list of instructions), written left to right.
+After the list of instructions, the UTM prints the state of the machine after the first instruction is executed -
+so the <em>entire</em> tape, the position of the current symbol, and the next m-configuration.
+From the first state of execution, it can find the correct instruction to execute next and print the second state after the first.
+Then the third, fourth, fifth, and so on.
+If it prints out the proper 0's and 1's between each state, then it produces the same sequence as the TM it is emulating.
+Voilá! A universal machine.</p>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'wayfaringcoder'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'turings-universal-machine';
+                var disqus_url = 'http://willengler.github.io/turings-universal-machine.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<div id="aboutme">
+        <p>
+            <img width="100%" class="img-thumbnail" src="images/monteverde/willVista.JPG"/>
+        </p>
+    <p>
+        <strong>About Will Engler</strong><br/>
+        I'm a software developer living in Chicago.
+              This blog is a place for reflections on technology and culture
+              that don't relate to my job.
+    </p>
+</div>
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="https://twitter.com/WillEngler"><i class="fa fa-twitter-square fa-lg"></i> Twitter</a></li>
+                <li class="list-group-item"><a href="https://github.com/WillEngler"><i class="fa fa-github-square fa-lg"></i> Github</a></li>
+                <li class="list-group-item"><a href="http://plenar.io/"><i class="fa fa-my-job-square fa-lg"></i> My Job</a></li>
+              </ul>
+            </li>
+
+
+
+
+
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2016 Will Engler
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="http://willengler.github.io/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://willengler.github.io/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://willengler.github.io/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'wayfaringcoder'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

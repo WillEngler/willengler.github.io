@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>SICP Book Club: 1.2 (What Are Processes?) - Wayfaring Coder: Will Engler's Blog</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="http://willengler.github.io/images/favicon.ico" rel="icon">
+
+<link rel="canonical" href="http://willengler.github.io/sicp-book-club-12-what-are-processes.html">
+
+        <meta name="author" content="Will Engler" />
+        <meta name="keywords" content="sicp" />
+        <meta name="description" content="In testing primality of very large numbers chosen at random, the chance of stumbling upon a value that fools the Fermat test is less than the chance that cosmic radiation will cause the computer to make an error in carrying out a “correct” algorithm. Considering an algorithm to be inadequate ..." />
+
+        <meta property="og:site_name" content="Wayfaring Coder: Will Engler's Blog" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="SICP Book Club: 1.2 (What Are Processes?)"/>
+        <meta property="og:url" content="http://willengler.github.io/sicp-book-club-12-what-are-processes.html"/>
+        <meta property="og:description" content="In testing primality of very large numbers chosen at random, the chance of stumbling upon a value that fools the Fermat test is less than the chance that cosmic radiation will cause the computer to make an error in carrying out a “correct” algorithm. Considering an algorithm to be inadequate ..."/>
+        <meta property="article:published_time" content="2015-05-14" />
+            <meta property="article:section" content="Technical" />
+            <meta property="article:tag" content="sicp" />
+            <meta property="article:author" content="Will Engler" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://willengler.github.io/theme/css/bootstrap.united.min.css" type="text/css"/>
+    <link href="http://willengler.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="http://willengler.github.io/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://willengler.github.io/theme/css/style.css" type="text/css"/>
+
+
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://willengler.github.io/" class="navbar-brand">
+Wayfaring Coder: Will Engler's Blog            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li >
+                            <a href="http://willengler.github.io/category/nontechnical.html">Nontechnical</a>
+                        </li>
+                        <li class="active">
+                            <a href="http://willengler.github.io/category/technical.html">Technical</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="http://willengler.github.io/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://willengler.github.io/sicp-book-club-12-what-are-processes.html"
+                       rel="bookmark"
+                       title="Permalink to SICP Book Club: 1.2 (What Are Processes?)">
+                        SICP Book Club: 1.2 (What Are Processes?)
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-05-14T14:34:44-05:00"> Thu 14 May 2015</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://willengler.github.io/tag/sicp.html">sicp</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <blockquote>
+<p>In testing primality of very large numbers chosen at random, the chance of stumbling upon a value that fools the
+Fermat test is less than the chance that cosmic radiation will cause the computer to make an error in 
+carrying out a “correct” algorithm. Considering an algorithm to be inadequate for the first reason 
+but not for the second illustrates the difference between mathematics and engineering.</p>
+</blockquote>
+<h3>Processes and Procedures</h3>
+<p>In my CS curriculum, I didn't come across the distinction between programs and processes until my first systems programming course.
+The focus there was on defining a process at a systems level: i.e., a state of execution of a program with its own stack and heap. 
+However, distinguishing between the blueprints that are programs and the growing, pulsing things that are processes is a good idea.</p>
+<p>By making this distinction early on, A&amp;S gave me a few big "Oh! Right," moments.
+The biggest was when they note that recursively defined procedures do not necessarily create recursive processes.
+The way they distinguish the two is helpful.
+Deferred operation characterizes recursive processes.
+Meanwhile, a limited number of variables that completely define the state of the process characterizes iterative processes.</p>
+<p>A related revelation was that loops can be rewritten as recursively defined procedures.
+It's obvious in hindsight, but I never stopped to think about it.</p>
+<h3>Recursion Is The Easy Way</h3>
+<p>I always chuckle when A&amp;S note how much easier it is to direct a recursive process than an iterative process.
+I remember not seeing recursion until my second programming course.
+It was presented as this crazy thing that we might not be able to wrap our heads around.
+But to A&amp;S (and the field of computer science at large), it is fundamental.
+I'm not saying Pitt presented the material badly; it's just funny to see it presented so differently.</p>
+<h3>Exercises</h3>
+<p>I was pickier this chapter.
+I skipped over all of the primality testing exercises because I feel I spent enough time on that in my life already.
+I just did enough to make sure I was grasping the difference between recursive and iterative processes and getting some Scheme practice.
+My partial solutions are available <a href="https://github.com/WillEngler/sicp-solutions/tree/master/C1/S2">here</a>.</p>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'wayfaringcoder'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'sicp-book-club-12-what-are-processes';
+                var disqus_url = 'http://willengler.github.io/sicp-book-club-12-what-are-processes.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<div id="aboutme">
+        <p>
+            <img width="100%" class="img-thumbnail" src="images/monteverde/willVista.JPG"/>
+        </p>
+    <p>
+        <strong>About Will Engler</strong><br/>
+        I'm a software developer living in Chicago.
+              This blog is a place for reflections on technology and culture
+              that don't relate to my job.
+    </p>
+</div>
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="https://twitter.com/WillEngler"><i class="fa fa-twitter-square fa-lg"></i> Twitter</a></li>
+                <li class="list-group-item"><a href="https://github.com/WillEngler"><i class="fa fa-github-square fa-lg"></i> Github</a></li>
+                <li class="list-group-item"><a href="http://plenar.io/"><i class="fa fa-my-job-square fa-lg"></i> My Job</a></li>
+              </ul>
+            </li>
+
+
+
+
+
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2016 Will Engler
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="http://willengler.github.io/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://willengler.github.io/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://willengler.github.io/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'wayfaringcoder'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>
