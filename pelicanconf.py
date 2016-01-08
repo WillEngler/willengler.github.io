@@ -13,8 +13,7 @@ FAVICON = 'images/favicon.ico'
 DISQUS_SITENAME = "wayfaringcoder"
 
 ABOUT_ME = """I'm a software developer living in Chicago.
-              This blog is a place for reflections on technology and culture
-              that don't relate to my job."""
+              This blog is a place for reflections on technology and culture."""
 
 AVATAR = 'images/monteverde/willVista.JPG'
 BOOTSTRAP_THEME = 'united'
