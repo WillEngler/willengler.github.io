@@ -15,7 +15,7 @@ Here are my technical resolutions for 2016:
 
 ### 1: Attack My Ignorance
 
-I've been in my new job as the lead engineer of [Plenario](plenar.io) for 4 months now.
+I've been in my new job as the lead engineer of [Plenario](http://plenar.io/) for 4 months now.
 There's nothing like a new job to show you how little you know.
 I've been picking up a lot on these topics on the job, but I'd like to take a more proactive approach.
 Here are three areas where I feel particularly weak and how I intend to improve.
