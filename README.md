@@ -25,4 +25,4 @@ Then open [localhost:4321](http://localhost:4321).
 - Add blog posts as Markdown files in `src/content/blog/`
 - Tweak colors and fonts in `public/styles/global.css`
 
-See `CLAUDE.md` for more detailed guidance (also useful for Claude Code).
+See `CLAUDE.md` for more detailed guidance (also useful for Claude Code)
