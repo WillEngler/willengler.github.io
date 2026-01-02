@@ -4,5 +4,5 @@ import { defineConfig } from 'astro/config';
 // and 'your-repo' with your repository name
 // If using a custom domain or username.github.io repo, you can remove the base option
 export default defineConfig({
-  site: 'https://willengler.github.io',
+  site: 'https://willengler.com',
 });
