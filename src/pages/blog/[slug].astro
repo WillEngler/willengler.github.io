@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    timeZone: 'UTC',
+  });
+}
+---
+
+<BaseLayout title={`${post.data.title} – Will Engler`}>
+  <article>
+    <div class="post-header">
+      <div class="post-date">{formatDate(post.data.date)}</div>
+      <h1>{post.data.title}</h1>
+    </div>
+    <Content />
+  </article>
+</BaseLayout>
